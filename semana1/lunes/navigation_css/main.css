@@ -1,0 +1,51 @@
+.container {
+  margin: 0 auto;
+  width: 768px;
+}
+
+header {
+  background-color: black;
+}
+
+nav{
+  width: 768px;
+  height: 28px;
+  background-color: #AAAAAA;
+  float: left;
+}
+
+nav ul{
+  margin: 0.18em 0em;
+  float: top;
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  padding: 0em 3.8em;
+}
+
+nav li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.content{
+  width: 768px; 
+  margin-bottom: 20px;
+}
+
+.content h2{
+  font-size: 24px;
+  margin: 0.67em 0;
+}
+
+.footer strong{
+  margin-bottom: 20px;
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;
+}
