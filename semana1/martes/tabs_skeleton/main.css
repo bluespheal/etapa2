@@ -1,0 +1,64 @@
+.container {
+  margin: 0 auto;
+  width: 768px;
+}
+
+header {
+  background-color: black;
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;
+}
+
+.tab {
+  display: none;
+}
+
+.tabs {
+  float: left;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.tabs li {
+  float: left;
+  margin-right: 16px;
+  padding: 10px 15px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.tabs li a {
+  color: #666;
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+}
+
+/**
+ * Hacer un tab puede ser un poco complicado al principio, tiene ciertos detalles
+ * que puede que no sean claros a simple vista para resolver.
+ * Estos cambios nos ayudan a que la altura del li siga siendo la misma.
+ * Al final el borde blanco del `li` cubre el borde gris del `ul`
+ */
+
+.tabs li.active {
+  border: 1px solid #ccc;         /* Creamos el borde del tab */
+  border-bottom: 1px solid white; /* Cambiamos el color para ocultar el  */
+  border-top-left-radius: 4px;    /* Borde del tab */
+  border-top-right-radius: 4px;   /* Borde del tab */
+  margin-bottom: -1px;            /* Margen negativo */
+  height: 31px;                   /* Incrementa la altura del li un pixel */
+  padding: 9px 14px;
+}
+
+.tabs li.active a {
+  color: black;
+  text-decoration: none;
+  border-bottom: none;
+}
+

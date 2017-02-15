@@ -1,0 +1,54 @@
+.container .content {
+  margin: 0 auto;
+  width: 768px;
+  padding-top: 200px;
+}
+
+nav{
+  background-color: #222222;
+  width: 768px;
+  margin: 0 auto;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+
+.transparency{
+  opacity: 0.7;
+}
+
+
+nav ul{
+  margin: 0em 0em;
+  float: left;
+  text-align: center;
+  padding: 1em 3em;
+}
+
+nav li {
+  width: 768px;
+  display: inline;
+  padding: 0em 2em;
+}
+
+nav li a {
+  text-decoration: none;
+  color: white;
+  padding: 2em 0em;
+  font-size: auto;
+}
+
+#logo {
+  float: left;
+  padding-top: 2px;
+  padding-left: 560px;
+  margin-right: 100px;
+}
+
+.footer{
+  padding-top: 20px;
+  margin: 0 auto;
+  width: 768px;
+}

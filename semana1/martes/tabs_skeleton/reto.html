@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!--
+    https://necolas.github.io/normalize.css/
+    Normalize.css makes browsers render all elements more consistently and in line
+    with modern standards. It precisely targets only the styles that need normalizing.
+  -->
+  <link rel="stylesheet" href="normalize.css">
+
+  <!-- Especifica que podamos utilizar acentos dentro del HTML  -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <!-- Aquí va tu css -->
+  <link rel="stylesheet" href="main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <title>Reto de CSS</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img id="logo" src="codea-logo.png">
+    </header>
+    <h2>Conviértete en un Desarrollador Web en 12 semanas</h2>
+
+    <ul class="tabs">
+      <li class="active"><a href="#tab1">¿Qué vas a aprender?</a></li>
+      <li><a href="#tab2">Tecnologías</a></li>
+      <li><a href="#tab3">Ruby on Rails</a></li>
+    </ul>
+
+    <div class="tab" id="tab1">
+      <p><strong>¿Qué vas a aprender?</strong> Lorem ipsum dolor sit amet,
+      consectetur adipiscing elit. Ut volutpat erat et nibh molestie, a aliquet
+      lorem condimentum. Aliquam lobortis ante risus. Cras non eleifend mauris.
+      Phasellus faucibus lorem a ipsum ultrices congue. Mauris semper condimentum
+      pellentesque. Ut maximus libero feugiat rutrum facilisis. Phasellus
+      vestibulum, nibh quis bibendum laoreet, diam risus tincidunt nunc, vel
+      mollis lectus lectus in sem.</p>
+    </div>
+
+    <div class="tab" id="tab2">
+      <p><strong>Tecnologías</strong> Quisque euismod tortor vel condimentum
+      pharetra. Vestibulum aliquam elementum euismod. Vestibulum eu sagittis ligula.
+      Curabitur nulla metus, euismod et eros eget, congue cursus nibh. Nullam
+      porta ut massa vitae ornare. Pellentesque et vehicula tortor. Donec interdum
+      rutrum diam, sit amet vestibulum mi sollicitudin quis. Phasellus semper
+      sit amet ligula eget tristique. Etiam at egestas ante. Suspendisse massa
+      risus, accumsan nec erat sed, posuere viverra neque.</p>
+    </div>
+
+    <div class="tab" id="tab3">
+      <p><strong>Ruby on Rails</strong> Ut magna risus, sodales ac dolor sed,
+      commodo commodo ipsum. Ut tempus erat a varius pulvinar. Vivamus aliquet
+      turpis risus, pretium feugiat enim sodales sed. Nulla molestie est mollis
+      dui pulvinar, sit amet finibus lorem fermentum. Vestibulum fermentum eros
+      eu tincidunt elementum. Aenean posuere magna vitae nulla congue, non
+      accumsan arcu dictum. Mauris venenatis sagittis arcu ac elementum.</p>
+    </div>
+  </div>
+
+  <!-- Aquí va tu javascript -->
+  <script type="text/javascript" src="tabs.js"></script>
+</body>
+</html>
