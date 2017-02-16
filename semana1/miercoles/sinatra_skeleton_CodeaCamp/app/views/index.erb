@@ -1,0 +1,16 @@
+  <h1>Url Reducida</h1>
+  <p>crea tu url reducida!</p>
+  <form action="/urls" method="post">
+    <br>
+    <input type="text" value="url" name="user_url">
+
+    <input type="submit" value="post">
+  </form>
+
+  <h2>Una lista de las urls registradas</h2>
+
+  <% @all.each do |url| %>
+  <p> <%= url.id %> : <%= url.original_url %> : <a href="/short_url/<%= url.id %>"><%= url.short_url %> </a>: <%= url.counter %></p>
+  <% end %>
+
+
