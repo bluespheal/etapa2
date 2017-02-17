@@ -1,15 +1,13 @@
-  <h1>Login :V</h1>
-  <p>Aqui puedes ir a muchos lugares ºOº</p>
+  <h1>Página del secreto!</h1>
+  <p> selecciona una opción</p>
 
-  <a href="/iniciar_sesion"> Iniciar sesion  </a>
+  <% if @online %>
+    <p>Hola! <%= @online %></p>
+  <% end %>
 
-  <a href="/cerrar_sesion">Cerrar sesion  </a>
-
-  <a href="/crear_cuenta">Crear Cuenta  </a>
-
-  <a href="/secreto">secreto ºOº  </a>
-
-  <a href="/no_secret_4_U"> No puedes verlo >:V </a>
-
-
-  
+  <ul>
+  <p><a href="/login">Iniciar sesión</a></p>
+  <p><a href="/cerrar_sesion">Cerrar sesión</a></p>
+  <p><a href="/crear_cuenta">Crear Cuenta </a></p>
+  <p><a href="/secreto">Secreto!!!</a></p>
+  </ul>

@@ -1,0 +1,3 @@
+class PostsTags < ActiveRecord::Base
+  # Remember to create a migration!
+end

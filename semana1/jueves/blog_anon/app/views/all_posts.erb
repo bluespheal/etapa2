@@ -1,0 +1,8 @@
+  <h1>Blog anonimo loko!!!</h1>
+  <p>Estos son todos los posts lokoz!</p>
+  
+  <% @posts.each_with_index do |post, index| %>
+    <p><%= index + 1 %>. <%= post.title %>:<%= post.body %></p>
+  <% end %>
+  
+  <p><a href="/post_menu">Regresar</a></p>

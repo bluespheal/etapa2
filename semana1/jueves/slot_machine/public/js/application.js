@@ -1,7 +1,11 @@
 $(document).ready(function() {
- $("#slot-machine form").on("submit", function(event){
+ $("#slot").on("submit", function(event){
     event.preventDefault();
-    var slot = $("die").serialize()
+    var slot = $(this).serialize()
+    // console.log( "Data Loaded: " + slot );
+    $.post( "/rolls", slot ,function(data){
+      // console.log( "Data Loaded: " + data );
+    $("#die").html(data)
+    });
   });
- 
 });

@@ -2,16 +2,13 @@
   <img id="logo" src="codea-logo.png">
 </header>
 
-<h1>Slot Machine :V </h1>
+<h1>Slot Machine</h1>
 
 <div id="slot-machine">
-  <form method="post" action="/rolls">
+  <form method="post" action="/rolls" id = "slot">
     <input id="submit" type="submit" value="SPIN">
   </form>
   <div id="die">
     <%= erb :_die_roll, layout: false %>
   </div>
 </div>
-
-<p> Esto es algo:<tt id="results"></tt></p>
-
