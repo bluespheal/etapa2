@@ -18,8 +18,8 @@ end
 
 # e.g., /q6bda
 get '/short_url/:id' do
-  @url = Url.find(id: params[:id])
-  @url.update(counter: 0)
+  @url = Url.find_by(id: params[:id])
+  @url.increment!(:counter, by = 1)
 
   redirect to ("/")
   # redirige a la URL original
