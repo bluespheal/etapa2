@@ -11,6 +11,7 @@ end
 # QUE HACER?: Convierte esta ruta para que utilice Ajax y si la petición no es
 # de Ajax de igual forma sirva.
 post '/rolls' do
+
   @rolls = []
 
   if params[:value]
@@ -21,7 +22,5 @@ post '/rolls' do
 
   @win = "WINNER!!" if @rolls.map! { |roll| roll.value }.uniq.count == 1
 
-  :_die_roll # TIP: Qué esté haciendo esto y qué debe hacer diferente.
+  erb :index  # TIP: Qué esté haciendo esto y qué debe hacer diferente.
 end
-
-

@@ -13,7 +13,7 @@ class CreatePosts < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :postags do |t|
+    create_table :posts_tags do |t|
       t.belongs_to :post, index: true
       t.belongs_to :tag, index: true
       t.timestamps

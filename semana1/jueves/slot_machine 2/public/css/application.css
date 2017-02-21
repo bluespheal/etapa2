@@ -1,0 +1,73 @@
+/*body {
+  background-color: red;
+}*/
+
+header {
+  background-color: black;
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  width: 768px;
+  padding: 0px 20px 20px 20px;
+  /*border: 1px dotted black;*/
+}
+
+th {
+  text-align: left;
+}
+
+#image-1 {
+  position: relative;
+  top: 103px;
+  left: 58px;
+}
+
+#image-2 {
+  position: relative;
+  top: 103px;
+  left: 76px;
+}
+
+#image-3 {
+  position: relative;
+  top: 103px;
+  left: 94px;
+}
+
+div#slot-machine {
+  width: 406px;
+  height: 331px;
+  background: url("../slot-machine-3.png") no-repeat;
+  margin: 0 auto;
+}
+
+#win {
+  position: relative;
+  top: 245px;
+  /*left: 170px;*/
+  color: #00e800;
+}
+
+form {
+  position: relative;
+  top: 331px;
+}
+
+#submit {
+  width: 406px;
+  height: 40px;
+  background-color: #1F8CD1;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+}
