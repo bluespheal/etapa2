@@ -1,0 +1,43 @@
+.container {
+  margin: 0 auto;
+  width: 750px;
+}
+
+header {
+  background-color: black;
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;
+}
+
+
+.feature:not(#turtles){
+  width: 350px;
+  float: left;
+}
+
+#turtles{
+  width: 350px;
+  float: right;
+  padding-top: 20px;
+}
+
+#que_hacemos img{
+  margin: 20px;
+  width: 360px;
+  float:right;
+
+}
+
+#turtle_power{
+  margin: 20px;
+  width: 360px;
+  float:left;
+}
+
+
+.main-title {
+  text-align: center;
+}
