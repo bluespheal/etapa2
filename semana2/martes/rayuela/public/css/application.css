@@ -23,9 +23,13 @@ header {
   width: 5px;
     border: 1px solid black;
 
+
 }
 
 .table {
+  border: 1px solid black;
+}
+#player1, #player2{
   border: 1px solid black;
 }
 
@@ -42,14 +46,14 @@ header {
 }
 
 .table .winner {
-  background-color: green;
+  background-color: #22EEAA;
 }
 .table .draw {
-  background-color: orange;
+  background-color: #22AAAA;
 }
 
 .table .lose{
-  background-color: red;
+  background-color: #993333;
 }
 
 button {

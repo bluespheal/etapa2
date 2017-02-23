@@ -1,75 +1,104 @@
 $(document).ready(function() {
 
-  function throw_coin(player){
-    n = 2;
-    score1 = 0;
-    m = 1;
-    a = 2;
-    score2 = 0;
-    b = 1;
-    $('td').removeClass("active");
-    $('td').removeClass("winner");
-    $('td').removeClass("lose");
+  timer = 3;
+  $player1 = $('#Player1');
+  $player2 = $('#Player2');
 
-
-    setTimeout(rollout, 30);
-  }
-
-  function rollout() {
-    setTimeout(function () {
-      $('#Player1>td:nth-child(' + n + ')').addClass("active");
-      n++;
-      $('#Player1>td:nth-child(' + m + ')').removeClass("active");
-      m++;
-      $('#Player2>td:nth-child(' + a + ')').addClass("active");
-      a++;
-      $('#Player2>td:nth-child(' + b + ')').removeClass("active");
-      b++;
-
-      $(document).keyup(function(e){
-      var code = e.which
-      if(code == 83) {n = 104; m = 104;}
-      if(code == 75) {a = 104; b = 104;}
-      });
-      if (n < 104 || a < 104) {
-        rollout();
-      }
-      if (n < 103){
-        score1++;
-      }
-      if (a < 103){
-        score2++;
-      }
-      if (n > 103 && a > 103) {
-        checklast1();
-        checklast2();
-        checkwinner();
-      }
-    }, 10)
-  }
-
-  function checklast1(){
-    var last_player1 = score1;
-    console.log("Player1 = " +last_player1);
-  }
-
-  function checklast2(){
-    var last_player2 = score2;
-    console.log("Player2 = " +last_player2);
-  }
-
-  function checkwinner(){
-    win_con = 89;
-    if (score1 > score2){
-      $("#player1").addClass("winner")
-    }
-    if (score1 < score2){
-      $("#player2").addClass("winner")
-    }
-  }
-
-	$("#start_btn").on("click", throw_coin);
+  $("#start_btn").on("click", throw_coin);
 
 });
+
+function throw_coin(player){
+  $("#start_btn").off("click", throw_coin);
+  reset_game();
+  timer_c = setInterval(function(){start_timer()}, 100);
+}
+
+function start_timer(){
+  // $("#start_btn").on("click", throw_coin);
+
+  $('#timer').text("Empieza en : " + timer);
+  timer--;
+  if (timer <= -1) {
+    clearInterval(timer_c);
+    game1 = setInterval(function(){rollout($player1)},10);
+    game2 = setInterval(function(){rollout($player2)},10);
+    scores = {};
+    // $('#timer').text("YA!");
+    $(document).keyup(function(e){
+      var code = e.which
+      if(code == 83 || stop1 ){ 
+        clearInterval(game1);
+        place = $($player1).find(".active").attr("id");
+        scores.player1 = place
+      }
+      if(code == 75 || stop2) { 
+        clearInterval(game2);
+        place = $($player2).find(".active").attr("id");
+        scores.player2 = place
+      }
+
+      if (Object.keys(scores).length == 2) {
+          check_winner(scores);
+      }
+    });
+  }
+}
+
+function rollout(player) {
+  player.find('.active').next().addClass('active');
+  player.find('.active').prev().removeClass('active');
+
+  if ($("#Player1 #101").hasClass("active")){
+    clearInterval(game1);
+    stop1 = true;
+  }
+
+  if ($("#Player2 #101").hasClass("active")){
+    clearInterval(game2);
+    stop2 = true;
+  }
+
+}
+
+function check_winner(scores){
+  win_con = 89;
+
+  score1 = Number(scores.player1);
+  score2 = Number(scores.player2);
+
+  if (score1 > 89 && score2 > 89){
+    $("#result").text("Ambos pierden :(")
+    $("td").addClass("lose")
+  }
+
+  if ((score1 > score2 || score2 > 89) && score1 < 89 ){
+    $("#result").text("Gana Jugador1! :D")
+    $("#Player1 td").addClass("winner")
+  }
+
+  if ((score1 < score2 || score1 > 89) && score2 < 89 ){
+    $("#result").text("Gana Jugador2! :D")
+    $("#Player2 td").addClass("winner")
+  }
+
+  if (score1 == score2 && (score1 < 89 || score2 < 89)){
+    $("#result").text("Es un empate! :O")
+    $("td").addClass("draw")
+  }
+}
+
+function reset_game(){
+  timer = 3;
+  $("#result").text("")
+  $('td').removeClass("winner");
+  $('td').removeClass("draw");
+  $('td').removeClass("lose");
+  $('td').removeClass("active");
+  $('td:nth-child(2)').addClass("active");
+}
+
+
+
 
 
