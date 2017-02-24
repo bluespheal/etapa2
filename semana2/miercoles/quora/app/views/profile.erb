@@ -1,13 +1,13 @@
 <h2> Welcome </h2>
 
 <h2><%= @user.username %></h2>
-<h3><%= @user.email %></h3>
 
-<ul>
 
 <% if logged_in?%>
 
 <% if current_user.id == @user.id%>
+<h3><%= @user.email %></h3>
+<ul>
 <p> <a href="/ask_question">Ask a question</a> </p>
 <p> <a href="/answer_question">Answer a question</a> </p>
 <p> <a href="/show_user_questions">Show your questions</a> </p>
