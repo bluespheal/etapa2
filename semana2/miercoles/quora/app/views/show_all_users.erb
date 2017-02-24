@@ -1,0 +1,6 @@
+<h1>All Users</h1>
+<% @users.each_with_index do |user, index| %>
+  <p><%= index + 1 %>. <a href="/users/<%= user.id %>"><%= user.username %></a></p>
+<% end %>
+
+<a href="/">Go Back</a>

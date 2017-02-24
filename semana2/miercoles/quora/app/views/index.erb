@@ -1,0 +1,27 @@
+<h1>Welcome to Kuora!</h1>
+<%if logged_in?%>
+<h2>You are logged in as <%= current_user.username %></h2>
+<%end%>
+
+
+
+<%if logged_in?%>
+
+<p><a href="/users/<%=current_user.id%>">Your Profile :)</a></p>
+
+<p><a href="/show_all_users">Show all users</a></p>
+
+<p><a href="/logout">Logout</a></p>
+
+<%else%>
+
+<p><a href="/login">Login</a></p>
+
+<p><a href="/register_account">Create account</a></p>
+
+<p><a href="/show_all_users">Show all users</a></p>
+<%end%>
+
+
+
+    

@@ -1,0 +1,24 @@
+<h1>Update your information</h1>
+
+<form action="/update_info" method="post">
+
+    <input type="text" placeholder="current username" name="current_username">
+
+    <input type="text" placeholder="current e-mail" name="current_email">
+
+    <input type="password" placeholder="current password" name="current_password">
+
+    <input type="text" placeholder="new username" name="new_username">
+
+    <input type="text" placeholder="new e-mail" name="new_email">
+
+    <input type="password" placeholder="new password" name="new_password">
+
+    <input type="submit" value="Update Info">
+  </form>
+
+
+<a href="/users/<%=current_user.id%>">Go Back</a>
+
+
+    
