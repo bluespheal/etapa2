@@ -28,7 +28,7 @@ get '/logout' do
 end
 
 get '/users/:id' do
-  @user = User.find(params[:id])
+  @user_profile = User.find(params[:id])
   erb :profile
 end
 
@@ -45,16 +45,46 @@ get '/ask_question' do
 end
 
 post '/ask_question' do 
-  question = params[:question]
-  puts "user #{current_user.username} asked #{question}" 
+  @question = current_user.questions.create(question: params[:question])
+
+  if @question.save
+    redirect  to "/users/#{current_user.id}"
+  else
+    erb :ask_question
+  end
+
 end
 
 get '/answer_question' do
+  @user_profile = current_user
+  @questions = Question.where.not(user_id: @user_profile.id)
+  erb :answer
+end
+
+get '/answer_question/:id' do 
+  @question_id = Question.find(params[:id])
+  @one_question = Question.find_by(id: @question_id.id )
+
+  erb :answer_one
+end
+
+post '/answer_question' do 
+  @question_id = Question.find(params[:id])
+
+  @answer = current_user.answers.create(question_id: @question_id.id, answer: params[:answer])
+
+  if @answer.save
+    redirect  to "/users/#{current_user.id}"
+  else
+    erb :answer_one
+  end
 
 end
 
-get '/show_user_questions' do
-
+get '/show_user_questions/:id' do
+  @user_profile = User.find(params[:id])
+  @questions = Question.where(user_id: @user_profile.id)
+  erb :show_user_questions
 end
 
 get '/show_user_answers' do
