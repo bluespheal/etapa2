@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="format.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <script src="javascript.js"></script>
+
+</head>
+
+<form  method="post" name="sign_up">
+    <br>
+    <p> Email <input id="email" type="text" name="user_email"></p>
+
+    <p> Password <input id="password" type="password"  name="user_password"></p>
+    
+    <button type="button" onclick="validate()">Sign Up</button>
+</form>
+
+<div >
+  <ul>
+    <li id="emailerr"></li>
+    <li id="passnum"></li>
+    <li id="passup"></li>
+    <li id="passlen"></li>
+  </ul>
+</div>
+
+</html>

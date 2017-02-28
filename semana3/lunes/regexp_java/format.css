@@ -1,0 +1,19 @@
+form p {
+  color: black;
+  font-size: 30px;
+  display: inline;
+
+}
+
+input {
+  font-size: 20px;
+}
+
+div li {
+  font-size: 30px;
+  color: white;
+}
+
+.active{
+  color: red;
+}

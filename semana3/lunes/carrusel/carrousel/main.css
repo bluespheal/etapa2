@@ -1,0 +1,91 @@
+header {
+  width: 768px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: black;
+}
+
+h2 {
+  color: white;
+  margin-top: 0;
+  padding-bottom: 15px;
+}
+
+.container {
+  /*width: 360px;*/
+  width: 620px;
+  /*height: 228px;*/
+  margin: 0 auto;
+  /*box-shadow: 10px 10px 5px #888888;*/
+  -webkit-box-shadow: -10px 10px 40px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow:    -10px 10px 40px 0px rgba(0,0,0,0.75);
+  box-shadow:         -10px 10px 40px 0px rgba(0,0,0,0.75);
+}
+
+.carousel{
+  overflow: hidden;
+  width: 100%;
+}
+
+.frames {
+  list-style: none;
+  position: relative;
+  width: 300%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  left: 0;
+}
+
+.frames > li {
+  position: relative;
+  float: left;
+  width: 33.33333%; /* (100 / número de imágenes) */
+}
+
+.carousel img {
+  display:block;
+  width:100%;
+  max-width:100%;
+}
+
+.carousel h2 {
+  font-size:1em;
+  padding:0.5em;
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  text-align:left;
+  margin: 0;
+  color: black;
+  border-radius: 50px;
+  /*background-color:rgba(99,0,0,0.75);*/
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+.carousel_controls a {
+  font-family: monospace;
+  text-decoration: none;
+  position: absolute;
+  /*margin-top: 99px;*/
+  margin-top: 180px;
+  width: 30px;
+  line-height: 30px;
+  background-color: #eee;
+  /*border: 1px solid #ddd;*/
+  border-radius: 30px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #7F7F7F;
+}
+
+a#previous_frame {
+  margin-left: -50px;
+}
+
+a#next_frame {
+  /*margin-left: 380px;*/
+  margin-left: 640px;
+}

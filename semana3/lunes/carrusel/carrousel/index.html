@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!--
+    Normalize.css makes browsers render all elements more consistently and in line
+    with modern standards. It precisely targets only the styles that need normalizing.
+  -->
+  <link rel="stylesheet" href="normalize.css">
+
+  <!-- Esto especifica que podamos utilizar acentos dentro del HTML  -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <!-- Esto especifica que podamos utilizar acentos dentro del HTML  -->
+  <link rel="stylesheet" href="main.css">
+  <title>Carrusel</title>
+</head>
+  <body>
+    <header>
+      <img src="codea-logo.png">
+      <h2>Conviértete en un Desarrollador Web en 12 semanas</h2>
+    </header>
+    <div class="container">
+      <div class="carousel_controls">
+        <a href="#" id="previous_frame">&lt;</a>
+        <a href="#" id="next_frame">&gt;</a>
+      </div>
+
+      <div class="carousel">
+        <ul class="frames">
+          <li>
+            <h2>Uno</h2>
+            <img src="https://codealab.files.wordpress.com/2015/06/image_4.jpg" />
+          </li>
+          <li>
+            <h2>Dos</h2>
+            <img src="https://codealab.files.wordpress.com/2015/06/image_2.jpg" />
+          </li>
+          <li>
+            <h2>Tres</h2>
+            <img src="https://codealab.files.wordpress.com/2015/06/image_1.png" />
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- // <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="carousel.js"></script>
+  </body>
+</html>
