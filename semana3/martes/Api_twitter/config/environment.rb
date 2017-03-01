@@ -20,21 +20,26 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 
-require 'carrierwave'
-require 'carrierwave/orm/activerecord'
-require 'mini_magick'
+require 'twitter'
 
-# Revisa que el folder de uploaders este contemplado el la configuración del app
-Dir[APP_ROOT.join('app', 'uploaders', '*.rb')].each { |file| require file }
-
-#Configuración global de todos los uploaders de CarrierWave
-CarrierWave.configure do |config|
-  config.root = APP_ROOT + 'public/'
-end
+require 'yaml'
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 APP_NAME = APP_ROOT.basename.to_s
+
+secrets = YAML::load_file(File.join(__dir__, 'keys.yml'))
+
+secrets.each do 
+ENV[key] = value
+end
+
+$client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = ENV['CONSUMER_KEY']
+  config.consumer_secret     = ENV['CONSUMER_SECRET']
+  config.access_token        = ENV['ACCESS_TOKEN']
+  config.access_token_secret = ENV['ACCESS_TOKEN_SECRET']
+end
 
 # Configura los controllers y los helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
