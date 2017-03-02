@@ -1,0 +1,9 @@
+  <h1>Tuits</h1>
+
+  <ul>
+  <% @tweets.each do |tweet| %>
+    <li>
+       <%= tweet.full_text %>
+    </li>
+  <% end %>
+</ul>

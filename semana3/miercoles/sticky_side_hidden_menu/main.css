@@ -1,0 +1,49 @@
+.container {
+  margin: 0 0 0 150px;
+  width: 720px;
+  padding-left:20px;
+}
+
+#side-bar{
+  visibility: hidden;
+}
+
+#pop{
+  visibility: visible;
+}
+
+#side-bar .active{
+  visibility: visible;
+}
+
+nav {
+  left:-110px;
+  width:150px;
+  height: 100%;
+  position: fixed;
+  float: left;
+  background-color: #cccccc;
+  top: 0px;
+}
+
+nav ul li{
+  position: relative;
+  list-style: none;
+  left: -40px;
+  top: -10px;
+}
+
+#pop{
+  left: 80px;
+  font-size: 20px;
+}
+
+nav ul li a{
+  white-space:nowrap;
+  padding: 15px;
+  padding-right: 135px;
+  display: block;
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid gray;
+}
