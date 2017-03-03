@@ -1,7 +1,8 @@
-<h2> Welcome </h2>
-
-<h2><%= @user_profile.username %></h2>
-
+<%if logged_in?%>
+<h2> Welcome <%= @user_profile.username %>!</h2>
+<%else%>
+<h2><%= @user_profile.username %>'s profile</h2>
+<%end%>
 
 <% if logged_in?%>
 
@@ -11,7 +12,7 @@
 <p> <a href="/ask_question">Ask a question</a> </p>
 <p> <a href="/answer_question">Answer a question</a> </p>
 <p> <a href="/show_user_questions/<%=@user_profile.id %>">Show your questions</a> </p>
-<p> <a href="/show_user_answers">Show your answers</a> </p>
+<p> <a href="/show_user_answers/<%=@user_profile.id %>">Show your answers</a> </p>
 <p> <a href="/show_all_questions">Show all questions!</a> </p>
 <p> <a href="/update_info">Update your info</a> </p>
 </ul>
@@ -20,7 +21,7 @@
 <% else %>
 
 <p> <a href="/show_user_questions/<%= @user_profile.id %>">Show <%= @user_profile.username %>'s questions</a> </p>
-<p> <a href="/show_user_answers">Show <%= @user_profile.username %>'s answers</a> </p>
+<p> <a href="/show_user_answers/<%=@user_profile.id %>">Show <%= @user_profile.username %>'s answers</a> </p>
 </ul>
 <p><a href="/show_all_users">Go back</a></p>
 
@@ -30,7 +31,7 @@
 <% else %>
 
 <p> <a href="/show_user_questions/<%= @user_profile.id %>">Show <%= @user_profile.username %>'s questions</a> </p>
-<p> <a href="/show_user_answers">Show <%= @user_profile.username %>'s answers</a> </p>
+<p> <a href="/show_user_answers/<%=@user_profile.id %>">Show <%= @user_profile.username %>'s answers</a> </p>
 </ul>
 <p><a href="/show_all_users">Go back</a></p>
 

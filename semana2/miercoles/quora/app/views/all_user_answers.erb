@@ -1,0 +1,14 @@
+<%if logged_in?%>
+<h1> These are all your answers</h1>
+<%else%>
+<h1> These are all <%=@user_profile.username%>'s answers</h1>
+<%end%>
+
+<% @answers.each_with_index do |answer, index| %>
+  <%question = Question.find(answer.question_id)%>
+  <p id = "question">Question no. <%=question.id%>: <%=question.question %> </p>
+  <p id="answer"> 
+ Your answer: <%= answer.answer%> </p>
+<% end %>
+
+<a href="/users/<%= @user_profile.id%>">Go Back</a>

@@ -24,11 +24,19 @@ get '/fetch/:handle' do
 end 
 
 post '/tweet' do
-    tweet = params[:tweet]
-    $client.access_token = current_user.oauth_token
-    $client.access_token_secret = current_user.oauth_token_secret
-    $client.update(tweet)
+  tweet = params[:tweet]
 
+  current_user.tweet(tweet)
+end
+
+post "/tweet_f" do
+  tweet = params[:tweet_f]
+
+  current_user.tweet_later(tweet)
+end
+
+get '/status/:job_id' do
+  job_is_complete(params[:job_id])
 end
 
 get '/sign_in' do
@@ -68,5 +76,7 @@ get "/sign_out" do
   session.clear
   redirect to "/"
 end
+
+
 
   # Para el signout no olvides borrar el hash de session

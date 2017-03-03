@@ -29,6 +29,12 @@ get '/login' do
   erb :login
 end
 
+before do
+  
+
+
+end
+
 post '/login' do
   @email = params[:user_email]
   @password = params[:user_password]
@@ -36,7 +42,6 @@ post '/login' do
     session[:session] = "#{@email}"
     redirect to ("/")
   else
-    puts "NO Se a inicaido sesión con éxito!!!! >:V"
     erb :login
   end
 end
@@ -60,12 +65,3 @@ get '/secreto' do
   end
 
 end
-
-
-
-# Iniciar Sesión
-# Cerrar Sesión
-# Crear cuenta de usuario
-# Página secreta
-# Redirigir a una persona que intenta ver la página secreta a iniciar sesión sin haber iniciado una sesión.
-

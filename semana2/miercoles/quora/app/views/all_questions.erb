@@ -1,0 +1,8 @@
+<h1> These are all the quetions </h1>
+
+<% @questions.each_with_index do |question, index| %>
+
+ <%= question.id%>: <%= question.question%> </p>
+<% end %>
+
+<a href="/users/<%= @user_profile.id%>">Go Back</a>

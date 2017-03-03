@@ -68,7 +68,7 @@ get '/answer_question/:id' do
   erb :answer_one
 end
 
-post '/answer_question' do 
+post '/answer_question/:id' do 
   @question_id = Question.find(params[:id])
 
   @answer = current_user.answers.create(question_id: @question_id.id, answer: params[:answer])
@@ -87,12 +87,16 @@ get '/show_user_questions/:id' do
   erb :show_user_questions
 end
 
-get '/show_user_answers' do
-
+get '/show_user_answers/:id' do
+  @user_profile = User.find(params[:id])
+  @answers = Answer.where(user_id: @user_profile.id)
+  erb :all_user_answers
 end
 
 get '/show_all_questions' do
-
+  @user_profile = current_user
+  @questions = Question.all
+  erb :all_questions
 end
 
 get '/update_info' do

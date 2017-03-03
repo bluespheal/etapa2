@@ -2,10 +2,18 @@
 
 <p><%= @one_question.id%>: <%= @one_question.question %></p>
 
-<form action="/answer_question" method="post" id="answer">
+<%@answers = Answer.where(question_id:@one_question.id)%>
+
+<form action="/answer_question/<%= @one_question.id%>" method="post" id="answer">
     <br>
     <textarea rows="4" cols="50" name="answer" form="answer" placeholder= "Write your answer here"></textarea>
     <input type="submit" value="Answer!">
 </form>
+
+<% @answers.each_with_index do |answer, index| %>
+ <p id= "answer"> Your answer: <%= answer.answer%> </p>
+<% end %>
+
+
 
 <a href="/users/<%=current_user.id%>">Go Back</a>
