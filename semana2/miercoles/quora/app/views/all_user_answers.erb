@@ -1,6 +1,8 @@
-<%if logged_in?%>
+<%if current_user.username == @user_profile.username%>
+<% who = "Your" %>
 <h1> These are all your answers</h1>
 <%else%>
+<% who = @user_profile.username + "'s"%>
 <h1> These are all <%=@user_profile.username%>'s answers</h1>
 <%end%>
 
@@ -8,7 +10,7 @@
   <%question = Question.find(answer.question_id)%>
   <p id = "question">Question no. <%=question.id%>: <%=question.question %> </p>
   <p id="answer"> 
- Your answer: <%= answer.answer%> </p>
+ <%=who%> answer: <%= answer.answer%> </p>
 <% end %>
 
-<a href="/users/<%= @user_profile.id%>">Go Back</a>
+<a href="/users/<%= @user_profile.id%>" id = "back"> &#8617; Go Back</a>

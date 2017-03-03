@@ -1,0 +1,43 @@
+<header>
+  <img src="img/codea-logo.png" id="logo">
+</header>
+
+
+<h1 id="main-title">¡RAYUELA!</h1>
+    <button id="start_btn">Jugar</button><br><br>
+
+    <p><span id="timer"> <%= %></span> </p>
+
+  <div id ="spectrum">
+    <table class="table" id="tabla">
+      <tr id="Player1">
+        <td id="player1"><strong>Jugador 1</strong></td>
+        <td class="active"></td>
+        <% (1..100).each do |t| %>
+        <% t = t+1 %>
+          <td id = <%= t %> > </td>
+        <% end %>
+      </tr>
+
+     
+</table>
+  </div>
+
+  <div id ="health_bar">
+    <table class="health" id="tabla">
+      <tr id="Health_enemy">
+        <td id="health_enemy"><strong>Lagarto</strong></td>
+        <td class="active"></td>
+        <% (1..20).each do |t| %>
+        <% t = t+1 %>
+          <td id = <%= t %> > </td>
+        <% end %>
+      </tr>
+
+     
+</table>
+  </div>
+
+
+
+    <p><span id="result"> <%= %></span> </p>

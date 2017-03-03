@@ -4,16 +4,21 @@
 
 <%@answers = Answer.where(question_id:@one_question.id)%>
 
-<form action="/answer_question/<%= @one_question.id%>" method="post" id="answer">
+<form action="/answer_question/<%= @one_question.id%>" method="post" id="form">
     <br>
     <textarea rows="4" cols="50" name="answer" form="answer" placeholder= "Write your answer here"></textarea>
     <input type="submit" value="Answer!">
 </form>
 
 <% @answers.each_with_index do |answer, index| %>
- <p id= "answer"> Your answer: <%= answer.answer%> </p>
+<%if current_user.username == (User.find_by(id: answer.user_id)).username%>
+  <%user = "Your"%>
+<%else%>
+  <%user = (User.find_by(id: answer.user_id)).username + "'s"%>
+<%end%>
+ <p id= "answer"> <%=user%> answer: <%= answer.answer%> </p>
 <% end %>
 
 
 
-<a href="/users/<%=current_user.id%>">Go Back</a>
+<a href="/answer_question" id = "back"> &#8617; Go Back</a>

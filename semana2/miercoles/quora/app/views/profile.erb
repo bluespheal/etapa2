@@ -1,4 +1,4 @@
-<%if logged_in?%>
+<%if current_user.username == @user_profile.username%>
 <h2> Welcome <%= @user_profile.username %>!</h2>
 <%else%>
 <h2><%= @user_profile.username %>'s profile</h2>
@@ -16,14 +16,14 @@
 <p> <a href="/show_all_questions">Show all questions!</a> </p>
 <p> <a href="/update_info">Update your info</a> </p>
 </ul>
-<p><a href="/">Go back</a></p>
+<p><a href="/" id = "back"> &#8617; Go back</a></p>
 
 <% else %>
 
 <p> <a href="/show_user_questions/<%= @user_profile.id %>">Show <%= @user_profile.username %>'s questions</a> </p>
 <p> <a href="/show_user_answers/<%=@user_profile.id %>">Show <%= @user_profile.username %>'s answers</a> </p>
 </ul>
-<p><a href="/show_all_users">Go back</a></p>
+<p><a href="/show_all_users" id = "back"> &#8617; Go back</a></p>
 
 
 <% end %>
@@ -33,7 +33,7 @@
 <p> <a href="/show_user_questions/<%= @user_profile.id %>">Show <%= @user_profile.username %>'s questions</a> </p>
 <p> <a href="/show_user_answers/<%=@user_profile.id %>">Show <%= @user_profile.username %>'s answers</a> </p>
 </ul>
-<p><a href="/show_all_users">Go back</a></p>
+<p><a href="/show_all_users" id = "back"> &#8617; Go back</a></p>
 
 <% end %>
 

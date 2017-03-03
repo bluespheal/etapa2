@@ -1,7 +1,25 @@
+<%if current_user.username == @user_profile.username%>
 <h1>These are all your questions</h1>
+<%else%>
+<h1> These are all <%=@user_profile.username%>'s questions</h1>
+<%end%>
+
+
 
 <% @questions.each_with_index do |question, index| %>
-  <p><%= index + 1 %>. <%= question.question%> </p>
+  <%answer = (Answer.find_by(question_id: question.id)) %>
+  <%if answer != nil %>
+    <%user = (User.find_by(id: answer.user_id)).username  %>
+  <%end%>
+
+  <p id = "question"><%= index + 1 %>. <%= question.question%> </p>
+  <%if user != nil %>
+    <p id = "answer"><%=user%>'s answer: <%=answer.answer%><p>
+  <%elsif current_user.username != @user_profile.username%>
+    <p id = "no_answer">No answers yet :(  <a href="/answer_question/<%= question.id%>">be the first to answer! </a><p>
+  <%else%>
+    <p id = "no_answer">No answers yet :(<p>
+  <%end%>
 <% end %>
 
-<a href="/users/<%= @user_profile.id%>">Go Back</a>
+<a href="/users/<%= @user_profile.id%>" id = "back"> &#8617; Go Back</a>

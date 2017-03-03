@@ -2,7 +2,7 @@
   margin: 20px auto;
   width: 600px;
   padding: 20px 20px 20px 20px;
-  background-color: #FFCCCC;
+  background-color: #AADDFF;
   border-radius: 20px;
 }
 
@@ -15,19 +15,19 @@ th {
 }
 
 h1{
-  background-color: #FF3333;
+  background-color: #3366FF;
   padding: 30px;
   border-radius:  50px; 
 }
 
 h2{
-  background-color: #FF5555;
+  background-color: #5599FF;
   padding: 20px;
   border-radius:  20px; 
 }
 
 h3{
-  background-color: #FF7777;
+  background-color: #77AAFF;
   padding: 10px;
   border-radius:  50px; 
 }
@@ -35,21 +35,32 @@ h3{
 #question{
   padding: 10px;
   border-radius:  20px; 
-  background-color: #FFAAAA;
+  background-color: #AAAAFF;
 }
 
 a:not(#questions){
   border-radius:  20px; 
-  background-color: #FFAAAA;
+  background-color: #DDEEFF;
   padding: 6px;
   text-decoration: none;
   color: black;
 }
 
 a:not(#questions):hover{
-  background-color: #FFDDDD;
+  background-color: #EEFFFF;
   box-shadow: 0 0 20px #FFFFFF;
 
+}
+
+ul > p{
+  padding: 3px;
+}
+
+#update{
+ padding: 20px;
+}
+#update>input{
+ padding: 20px;
 }
 
 #questions{
@@ -59,6 +70,10 @@ a:not(#questions):hover{
 #questions:hover{
   color: white;
   text-shadow: 0 0 1px #FFFFFF;
+}
+
+#back{
+  padding: 20px;
 }
 
 #answer{
@@ -71,8 +86,25 @@ a:not(#questions):hover{
   padding: 15px;
 }
 
+#no_answer{
+  background-color: #222244;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-top-left-radius: -50px;
+  color:white;
+  padding: 10px;
+}
+
+#form{
+  background-color: #88AAFF;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+
 textarea{
-  background-color: #FFEEEE;
+  background-color: #EEFEFF;
   border-radius: 10px;
   padding: 5px;
 }
@@ -81,11 +113,11 @@ input{
   padding: 10px;
   border-radius: 40px;
   color: white;
-  background-color: #FF5555;
+  background-color: #5555FF;
   border: none;
 }
 
 input:hover{
-  background-color: #DD3333;
+  background-color: #3333DD;
   text-shadow: 0 0 3px #FFFFFF;
 }
