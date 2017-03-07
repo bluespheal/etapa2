@@ -1,0 +1,30 @@
+<h1>Winners Record</h1>
+
+<div class="centerTable">
+	<table class="hovertable">
+		<tr>  
+      <td>Player</td> 
+      <td>Games Won</td> 
+    </tr>
+    <%@users.order(:games_won).reverse.each do |c|%>
+      <tr>
+      <td><%=c.username%></td>
+      <%round_won = c.games_won.floor%>
+      <td><%=round_won%></td>
+      </tr>
+			<% if round_won != 0 %>
+				  <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+				  </tr>
+			<% end %>
+    <%end%> 
+    
+		
+	</table>
+</div>
+
+<aside>
+  <h3></h3>
+  <form method="post" action="/games">
+    <input type="submit" value="Play">
+  </form>
+</aside>

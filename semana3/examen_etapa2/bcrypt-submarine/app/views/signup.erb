@@ -1,0 +1,20 @@
+<h1>Sign Up</h1>
+<% if @errors %>
+  <p><%= @errors %></p>
+<% end %>
+<div class="container" id="form">
+  <ul>
+  <form action="/signup" method="post" >
+    <br>
+    Name:
+    <input type="text" name="username">
+    Email:
+    <input type="text"  name="user_email">
+    Password:
+    <input type="password" name="user_password">
+
+    <input type="submit" value="Sign Up">
+  </form>
+</ul>
+
+</div> <!--end "sign up form" div -->

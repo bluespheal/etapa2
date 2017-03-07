@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Welcome <%= @user.username %></h2>
+</div>
+
+<h1>Your Score by Rounds</h1>
+
+<div class="centerTable">
+	<% if @rounds.count != 0 %>
+		<table class="hovertable">
+		<tr>	
+      <td>Rounds</td> 
+      <td>Destroyed Submarines</td> 
+      <td>Result</td> 
+    </tr>
+    <%@rounds.each do |c|%>
+		  <tr>
+      <td><%=c.id%></td>
+      <td><%=c.destroyed_subs.floor%></td>
+      <%result = ""%>
+      <%if c.destroyed_subs.floor == 2%>
+        <%result = "Winner!" %>
+        <%elsif c.destroyed_subs.floor == 1%>
+        <%result = "Almost!" %>
+        <%else%> 
+        <%result = "Failure!" %>
+      <%end%>
+      <td><%=result%></td>
+    </tr>
+    <%end%>	
+		</table>
+	<% else %>
+	  <h3>No rounds for tdis player!</h3>
+	<% end %>
+</div>
+
+<aside>
+  <h3></h3>
+  <form method="post" action="/new_game">
+    <input type="submit" value="Play Again">
+  </form>
+</aside>

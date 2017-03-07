@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Welcome <%= @user.name %></h2>
+</div>
+
+<h1>Your Score by Rounds</h1>
+
+<div class="centerTable">
+	<% if @rounds.count != 0 %>
+		<table class="hovertable">
+			<!-- ¿Qué va en esta parte para llevar la puntuación por round del jugador? -->
+			
+		</table>
+	<% else %>
+	  <h3>No rounds for this player!</h3>
+	<% end %>
+</div>
+
+<aside>
+  <h3></h3>
+  <form method="post" action="/new_game">
+    <input type="submit" value="Play Again">
+  </form>
+</aside>
